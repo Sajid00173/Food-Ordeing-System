@@ -89,6 +89,23 @@ public class Order extends FoodOrdering {
             System.out.println("Choose 1 to 5 only!");
             Order();
         }
+
+        System.out.println("Paid: ");
+        paid = input.nextInt();
+        if(paid <= total)
+        {
+            System.out.println("Please pay the bill first. ");
+        }
+        else if (paid == total)
+        {
+            System.out.println("Thank you!\n Your TokenNo is 1 ");
+        }
+        else if (paid >= total)
+        {
+            System.out.println("Thank you!\n");
+            double exchange = paid - total;
+            System.out.println("Your exchange: \n" + exchange);
+        }
     }
     public static void main(String[] args) {
         menu();
